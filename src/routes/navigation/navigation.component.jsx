@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
-import { selectCurrentUser } from '../../store/user/user.selector';
+import { selectCurrentUser } from '../../store/user-slice';
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg';
