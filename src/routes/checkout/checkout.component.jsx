@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
-import { selectCartItems, selectCartTotal } from '../../store/cart-slice';
+import { selectCartItems, selectCartTotal, setIsCartOpen } from '../../store/cart-slice';
 
 import {
   CheckoutContainer,
@@ -13,6 +15,11 @@ import {
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setIsCartOpen(false))
+  }, [])
 
   return (
     <CheckoutContainer>
