@@ -9,16 +9,7 @@ const initialState = {
 
 export const fetchCategories = createAsyncThunk(
     'categories/fetchCategories',
-    async () => {
-        try {
-            const categoriesArray = await getCategoriesAndDocuments(
-                'categories'
-            )
-            return categoriesArray
-        } catch (e) {
-            return e
-        }
-    }
+    async () => (await getCategoriesAndDocuments())
 )
 
 export const categoriesSlice = createSlice({
@@ -36,7 +27,7 @@ export const categoriesSlice = createSlice({
             })
             .addCase(fetchCategories.rejected, (state, action) => {
                 state.isLoading = false
-                state.error = action.payload
+                state.error = action.error
             })
     }
 })
@@ -47,7 +38,7 @@ const selectCategoriesSlice = (state) => state.categories
 
 export const selectCategories = createSelector(
     [selectCategoriesSlice],
-    ({categories}) => categories
+    ({ categories }) => categories
 )
 
 export const selectCategoriesMap = createSelector(
