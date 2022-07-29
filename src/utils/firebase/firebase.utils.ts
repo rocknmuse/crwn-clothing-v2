@@ -21,6 +21,7 @@ import {
   query,
   getDocs,
   DocumentReference,
+  QueryDocumentSnapshot,
 } from 'firebase/firestore';
 import { Category } from '../../types/categories.types';
 
@@ -86,7 +87,7 @@ export type UserData = {
 export const createUserDocumentFromAuth = async (
   userAuth: User,
   additionalInformation = {}
-): Promise<DocumentReference<UserData> | void> => {
+): Promise<QueryDocumentSnapshot<UserData> | void> => {
   if (!userAuth) return;
 
   const userDocRef = doc(db, 'users', userAuth.uid);
@@ -109,7 +110,7 @@ export const createUserDocumentFromAuth = async (
     }
   }
 
-  return userDocRef as DocumentReference<UserData>;
+  return userSnapshot as QueryDocumentSnapshot<UserData>;
 };
 
 export const createAuthUserWithEmailAndPassword = async (email: string, password: string) => {
