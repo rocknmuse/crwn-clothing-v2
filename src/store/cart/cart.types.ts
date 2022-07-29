@@ -1,4 +1,4 @@
-import { Product } from '../categories/categories.types'
+import { Product } from '../../types/categories.types'
 
 export type CartItem = Product & { quantity: number }
 

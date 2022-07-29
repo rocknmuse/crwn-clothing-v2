@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit'
 import { RootState } from '../root-reducer'
-import { CategoriesMap } from './categories.types'
+import { CategoriesMap } from '../../types/categories.types'
 
 const selectCategoriesSlice = (state: RootState) => state.categories
 

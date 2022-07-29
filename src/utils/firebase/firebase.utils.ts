@@ -22,7 +22,7 @@ import {
   getDocs,
   DocumentReference,
 } from 'firebase/firestore';
-import { Category } from '../../store/categories/categories.types';
+import { Category } from '../../types/categories.types';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCcjkUcNttgoK9WAqtL3KCrCfF1es-ThcA",

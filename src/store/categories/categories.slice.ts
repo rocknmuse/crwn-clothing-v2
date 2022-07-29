@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { getCategoriesAndDocuments } from '../../utils/firebase/firebase.utils'
-import { CategoriesState, Category } from './categories.types';
+import { CategoriesState, Category } from '../../types/categories.types';
 
 const initialState: CategoriesState = {
     categories: [],

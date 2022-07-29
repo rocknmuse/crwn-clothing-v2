@@ -1,3 +1,5 @@
+import { Key } from "react";
+
 export type Product = {
     id: number;
     name: string;
@@ -18,4 +20,11 @@ export type CategoriesState = {
 
 export type CategoriesMap = {
     [key: string]: Product[]
+}
+
+export type CategoryDirectory = {
+    id: Key,
+    title: string,
+    imageUrl: string,
+    route: string,
 }
