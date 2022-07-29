@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { CartState } from './cart.types'
+import { Product } from '../../types/categories.types'
+import { CartItem, CartState } from './cart.types'
 
 const initialState: CartState = {
     isCartOpen: false,
@@ -10,7 +11,7 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState,
     reducers: {
-        addItemToCart: ({ cartItems }, { payload }) => {
+        addItemToCart: ({ cartItems }, { payload }: PayloadAction<Product>) => {
             const cartItemIdx = cartItems.findIndex(
                 (cartItem) => cartItem.id === payload.id
             )
@@ -21,7 +22,7 @@ export const cartSlice = createSlice({
                 cartItems.push({ ...payload, quantity: 1 })
             }
         },
-        removeItemFromCart: (state, { payload }) => {
+        removeItemFromCart: (state, { payload }: PayloadAction<CartItem>) => {
             const cartItem = state.cartItems.find(({ id }) => id === payload.id)
             if (cartItem) {
                 if (cartItem.quantity === 1) {
@@ -33,12 +34,12 @@ export const cartSlice = createSlice({
                 }
             }
         },
-        clearCartItem: (state, { payload }) => {
+        clearCartItem: (state, { payload }: PayloadAction<CartItem>) => {
             state.cartItems = state.cartItems.filter(
                 ({ id }) => id !== payload.id
             )
         },
-        setCartItems: (state, { payload }) => {
+        setCartItems: (state, { payload }: PayloadAction<CartItem[]>) => {
             state.cartItems = payload
         },
         setIsCartOpen: (state, { payload }: PayloadAction<boolean>) => {
