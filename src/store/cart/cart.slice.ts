@@ -1,4 +1,4 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { CartState } from './cart.types'
 
 const initialState: CartState = {
@@ -41,7 +41,7 @@ export const cartSlice = createSlice({
         setCartItems: (state, { payload }) => {
             state.cartItems = payload
         },
-        setIsCartOpen: (state, { payload }) => {
+        setIsCartOpen: (state, { payload }: PayloadAction<boolean>) => {
             state.isCartOpen = payload
         }
     }

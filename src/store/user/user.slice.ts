@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { User } from 'firebase/auth'
 import { UserData } from '../../utils/firebase/firebase.utils'
 import { RootState } from '../root-reducer'
 import { UserState } from './user.types'
