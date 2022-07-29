@@ -8,7 +8,7 @@ const initialState: CategoriesState = {
     error: null
 }
 
-export const fetchCategories = createAsyncThunk<Category[], any, {rejectValue: Error}>(
+export const fetchCategories = createAsyncThunk<Category[], void, {rejectValue: Error}>(
     'categories/fetchCategories',
     async () => (await getCategoriesAndDocuments())
 )
