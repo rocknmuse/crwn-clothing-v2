@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import { useSelector } from 'react-redux'
 
-import { selectCartTotal } from '../../store/cart-slice'
-import { selectCurrentUser } from '../../store/user-slice'
+import { selectCartTotal } from '../../store/cart/cart.selector'
+import { selectCurrentUser } from '../../store/user/user.slice'
 
 import { FormContainer } from './payment-form.styles'
 import { BUTTON_TYPE_CLASSES } from '../button/button.component'

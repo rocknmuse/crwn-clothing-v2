@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addItemToCart, selectCartItems } from '../../store/cart-slice';
+import { addItemToCart, selectCartItems } from '../../store/cart/cart.slice';
 
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 

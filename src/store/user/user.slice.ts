@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { RootState } from '../root-reducer';
+import { UserState } from './user.types';
 
-const initialState = {
+const initialState: UserState = {
     currentUser: null
 }
 
@@ -14,7 +16,7 @@ export const userSlice = createSlice({
     }
 })
 
-export const selectCurrentUser = (state) => state.user.currentUser;
+export const selectCurrentUser = (state: RootState) => state.user.currentUser;
 
 export const { setCurrentUser } = userSlice.actions
 export default userSlice.reducer

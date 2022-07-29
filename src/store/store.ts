@@ -13,6 +13,7 @@ import logger from 'redux-logger'
 
 import { rootReducer } from './root-reducer'
 import { configureStore } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux'
 
 const persistConfig = {
     key: 'root',
@@ -44,3 +45,6 @@ export const store = configureStore({
 })
 
 export const persistor = persistStore(store)
+
+export type AppDispatch = typeof store.dispatch
+export const useAppDispatch: () => AppDispatch = useDispatch

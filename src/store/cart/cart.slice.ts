@@ -1,6 +1,7 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit'
+import { CartState } from './cart.types'
 
-const initialState = {
+const initialState: CartState = {
     isCartOpen: false,
     cartItems: []
 }
@@ -22,12 +23,14 @@ export const cartSlice = createSlice({
         },
         removeItemFromCart: (state, { payload }) => {
             const cartItem = state.cartItems.find(({ id }) => id === payload.id)
-            if (cartItem.quantity === 1) {
-                state.cartItems = state.cartItems.filter(
-                    ({ id }) => id !== payload.id
-                )
-            } else {
-                cartItem.quantity--
+            if (cartItem) {
+                if (cartItem.quantity === 1) {
+                    state.cartItems = state.cartItems.filter(
+                        ({ id }) => id !== payload.id
+                    )
+                } else {
+                    cartItem.quantity--
+                }
             }
         },
         clearCartItem: (state, { payload }) => {
@@ -52,26 +55,3 @@ export const {
     setCartItems,
     setIsCartOpen
 } = cartSlice.actions
-
-const selectCartSlice = (state) => state.cart
-
-export const selectIsCartOpen = createSelector(
-    [selectCartSlice],
-    (cart) => cart.isCartOpen
-)
-
-export const selectCartItems = createSelector(
-    [selectCartSlice],
-    (cart) => cart.cartItems
-)
-
-export const selectCartTotal = createSelector([selectCartItems], (cartItems) =>
-    cartItems.reduce(
-        (total, cartItem) => total + cartItem.quantity * cartItem.price,
-        0
-    )
-)
-
-export const selectCartCount = createSelector([selectCartItems], (cartItems) =>
-    cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0)
-)
