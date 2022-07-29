@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, SyntheticEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 import FormInput from '../form-input/form-input.component';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
