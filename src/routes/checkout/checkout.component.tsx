@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 
 import CheckoutItem from '../../components/checkout-item/checkout-item.component'
@@ -9,6 +8,7 @@ import {
     selectCartTotal
 } from '../../store/cart/cart.selector'
 import { setIsCartOpen } from '../../store/cart/cart.slice'
+import { useAppDispatch } from '../../store/store'
 
 import {
     CheckoutContainer,
@@ -20,7 +20,7 @@ import {
 const Checkout = () => {
     const cartItems = useSelector(selectCartItems)
     const cartTotal = useSelector(selectCartTotal)
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(setIsCartOpen(false))

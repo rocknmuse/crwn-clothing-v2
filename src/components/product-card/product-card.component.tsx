@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../store/cart/cart.slice';
+import { useAppDispatch } from '../../store/store';
 import { Product } from '../../types/categories.types';
 
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
@@ -18,7 +18,7 @@ type ProductCardProps = {
 
 const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const { name, price, imageUrl } = product;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const addProductToCart = () => dispatch(addItemToCart(product));
 

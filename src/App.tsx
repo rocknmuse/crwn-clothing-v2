@@ -1,6 +1,4 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-
 import { Routes, Route } from 'react-router-dom';
 
 import {
@@ -13,9 +11,10 @@ import Authentication from './routes/authentication/authentication.component';
 import Shop from './routes/shop/shop.component';
 import Checkout from './routes/checkout/checkout.component';
 import { setCurrentUser } from './store/user/user.slice';
+import { useAppDispatch } from './store/store';
 
 const App = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener(async (user) => {
