@@ -8,7 +8,7 @@ const initialState: CategoriesState = {
     error: null
 }
 
-export const fetchCategories = createAsyncThunk<Category[], void, {rejectValue: Error}>(
+export const fetchCategories = createAsyncThunk<Category[]>(
     'categories/fetchCategories',
     async () => (await getCategoriesAndDocuments())
 )
@@ -28,7 +28,7 @@ export const categoriesSlice = createSlice({
             })
             .addCase(fetchCategories.rejected, (state, action) => {
                 state.isLoading = false
-                state.error = action.error as Error
+                state.error = action.error
             })
     }
 })

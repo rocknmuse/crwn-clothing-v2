@@ -1,3 +1,4 @@
+import { SerializedError } from "@reduxjs/toolkit";
 import { Key } from "react";
 
 export type Product = {
@@ -15,7 +16,7 @@ export type Category = {
 export type CategoriesState = {
     categories: Category[],
     isLoading: boolean,
-    error: Error | null
+    error: SerializedError | null
 }
 
 export type CategoriesMap = {
