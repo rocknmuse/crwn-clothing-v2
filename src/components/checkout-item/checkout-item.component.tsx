@@ -22,10 +22,10 @@ const CheckoutItem: FC<CheckoutItemProps> = ({ cartItem }) => {
   const dispatch = useAppDispatch();
 
   const clearItemHandler = () =>
-    dispatch(clearCartItem(cartItem));
+    dispatch(clearCartItem(cartItem.id));
   const addItemHandler = () => dispatch(addItemToCart(cartItem));
   const removeItemHandler = () =>
-    dispatch(removeItemFromCart(cartItem));
+    dispatch(removeItemFromCart(cartItem.id));
 
   return (
     <CheckoutItemContainer>
