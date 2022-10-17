@@ -23,3 +23,7 @@ Use `yarn start` to launch only frontend on localhost:3000
 Use `yarn netlify dev` to launch on Netlify localhost:8888
 
 This mode is needed for [Stripe (Payment platform)](https://stripe.com/) because of using environment variables
+
+## Hosting
+
+The project is published on https://spontaneous-dragon-06d464.netlify.app/
