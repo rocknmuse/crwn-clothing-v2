@@ -1,7 +1,9 @@
 # Crown Clothing Project
 
 Learning project forked from [Crown Clothing by Yihua Zhang](https://github.com/ZhangMYihua/crwn-clothing-v2)
+
 Project has been migrated to React 18
+
 Redux has been replaced with redux-toolkit
 
 ## Prerunning:
