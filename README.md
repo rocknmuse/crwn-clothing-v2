@@ -18,6 +18,10 @@ Remember to replace the config variable in your firebase.utils.js with your own 
 
 <img width="1261" alt="Screen Shot 2022-03-11 at 8 51 22 PM" src="https://user-images.githubusercontent.com/10578605/157999158-10e921cc-9ee5-46f6-a0c5-1ae5686f54f3.png">
 
+### Set your stripe config
+
+Add .env file and put stripe variables REACT_APP_STRIPE_PUBLISHABLE_KEY and STRIPE_SECRET_KEY. Take it from the [Stripe dashboard](https://dashboard.stripe.com/test/dashboard)
+
 ## Running
 
 Use `yarn start` to launch only frontend on localhost:3000
@@ -25,6 +29,8 @@ Use `yarn start` to launch only frontend on localhost:3000
 Use `yarn netlify dev` to launch on Netlify localhost:8888
 
 This mode is needed for [Stripe (Payment platform)](https://stripe.com/) because of using environment variables
+
+For successful payment use card 4242 4242 4242 4242
 
 ## Hosting
 
